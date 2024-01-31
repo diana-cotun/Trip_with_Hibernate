@@ -21,12 +21,12 @@ public class PassengerRepository {
         entityManager.persist(passenger);
     }
 
-    public void save2(Passenger passenger, int tripId) {
+    public void save2(Passenger passenger, int idTrip) {
         EntityTransaction transaction = entityManager.getTransaction();
         if(!transaction.isActive()) {
             transaction.begin();
         }
-        Trip trip = entityManager.find(Trip.class, tripId);
+        Trip trip = entityManager.find(Trip.class, idTrip);
         passenger.setTrip(trip);
         entityManager.persist(passenger);
 

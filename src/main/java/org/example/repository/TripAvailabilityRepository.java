@@ -3,10 +3,7 @@ package org.example.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
-import org.example.entity.Passenger;
-import org.example.entity.Trip;
 import org.example.entity.TripAvailability;
-import org.hibernate.query.Query;
 
 
 public class TripAvailabilityRepository {
@@ -25,7 +22,7 @@ public class TripAvailabilityRepository {
         entityManager.persist(tripAvailability);
     }
 
-    public void updateSits(int idTrip) {
+    public void updateSeats(int idTrip) {
         EntityTransaction transaction = entityManager.getTransaction();
         if (!transaction.isActive()) {
             transaction.begin();

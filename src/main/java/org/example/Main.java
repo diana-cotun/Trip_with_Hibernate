@@ -2,8 +2,6 @@ package org.example;
 
 import jakarta.persistence.EntityManager;
 import org.example.entity.Passenger;
-import org.example.entity.Trip;
-import org.example.entity.TripAvailability;
 import org.example.repository.PassengerRepository;
 import org.example.repository.TripAvailabilityRepository;
 import org.example.repository.TripRepository;
@@ -23,7 +21,7 @@ public class Main {
         Passenger passenger = new Passenger("Andrei", tripRepository.find(4));
 
         passengerRepository.save2(passenger,4);
-        availabilityRepository.updateSits(4);
+        availabilityRepository.updateSeats(4);
 
         entityManager.close();
 
